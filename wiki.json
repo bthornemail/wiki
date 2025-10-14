@@ -1,0 +1,1597 @@
+{
+  "metadata": {
+    "generatedAt": "2025-01-04T06:30:00Z",
+    "version": "1.0.0",
+    "description": "Abstract Syntax Tree (AST) representation of all TypeScript functions in the Axiomatic codebase",
+    "totalFiles": 146,
+    "totalFunctions": 0,
+    "totalClasses": 0,
+    "totalInterfaces": 0,
+    "totalEnums": 0
+  },
+  "files": {
+    "src/types.ts": {
+      "path": "src/types.ts",
+      "type": "typescript",
+      "ast": {
+        "type": "SourceFile",
+        "statements": [
+          {
+            "type": "InterfaceDeclaration",
+            "name": "GeometricMessage",
+            "kind": "interface",
+            "members": [
+              {
+                "type": "PropertySignature",
+                "name": "id",
+                "type": "string",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature", 
+                "name": "from",
+                "type": "string",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "to", 
+                "type": "string",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "content",
+                "type": "string", 
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "parents",
+                "type": "string[]",
+                "optional": true
+              },
+              {
+                "type": "PropertySignature",
+                "name": "group",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "type": "PropertySignature",
+                "name": "shape",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "type": "PropertySignature",
+                "name": "geometric_metadata",
+                "type": "GeometricMetadata",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "type": "InterfaceDeclaration",
+            "name": "GeometricData",
+            "kind": "interface",
+            "members": [
+              {
+                "type": "PropertySignature",
+                "name": "basis",
+                "type": "BasisStructure",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "eigenvectors",
+                "type": "EigenvectorData",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "constraints",
+                "type": "GeometricConstraints",
+                "optional": false
+              }
+            ]
+          },
+          {
+            "type": "InterfaceDeclaration",
+            "name": "Agent",
+            "kind": "interface",
+            "members": [
+              {
+                "type": "PropertySignature",
+                "name": "id",
+                "type": "string",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "name",
+                "type": "string",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "role",
+                "type": "string",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "capabilities",
+                "type": "string[]",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "epistemic",
+                "type": "IEpistemicComponent",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "geometric",
+                "type": "GeometricPosition",
+                "optional": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "src/client.ts": {
+      "path": "src/client.ts",
+      "type": "typescript",
+      "ast": {
+        "type": "SourceFile",
+        "statements": [
+          {
+            "type": "ClassDeclaration",
+            "name": "GeometricClient",
+            "kind": "class",
+            "modifiers": ["export"],
+            "members": [
+              {
+                "type": "Constructor",
+                "name": "constructor",
+                "parameters": [
+                  {
+                    "name": "serverUrl",
+                    "type": "string",
+                    "optional": false
+                  }
+                ],
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "left": {
+                          "type": "PropertyAccessExpression",
+                          "expression": {
+                            "type": "ThisExpression"
+                          },
+                          "name": "serverUrl"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "type": "Identifier",
+                          "text": "serverUrl"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "MethodDeclaration",
+                "name": "sendMessage",
+                "kind": "method",
+                "modifiers": ["async", "public"],
+                "parameters": [
+                  {
+                    "name": "message",
+                    "type": "GeometricMessage",
+                    "optional": false
+                  }
+                ],
+                "returnType": "Promise<GeometricMessage>",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "TryStatement",
+                      "tryBlock": {
+                        "type": "Block",
+                        "statements": [
+                          {
+                            "type": "VariableDeclaration",
+                            "declarationList": {
+                              "type": "VariableDeclarationList",
+                              "declarations": [
+                                {
+                                  "type": "VariableDeclaration",
+                                  "name": {
+                                    "type": "Identifier",
+                                    "text": "response"
+                                  },
+                                  "initializer": {
+                                    "type": "AwaitExpression",
+                                    "expression": {
+                                      "type": "CallExpression",
+                                      "expression": {
+                                        "type": "PropertyAccessExpression",
+                                        "expression": {
+                                          "type": "Identifier",
+                                          "text": "fetch"
+                                        },
+                                        "name": "json"
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "CallExpression",
+                                          "expression": {
+                                            "type": "PropertyAccessExpression",
+                                            "expression": {
+                                              "type": "Identifier",
+                                              "text": "fetch"
+                                            },
+                                            "name": "json"
+                                          },
+                                          "arguments": []
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "catchClause": {
+                        "type": "CatchClause",
+                        "variableDeclaration": {
+                          "type": "VariableDeclaration",
+                          "name": {
+                            "type": "Identifier",
+                            "text": "error"
+                          }
+                        },
+                        "block": {
+                          "type": "Block",
+                          "statements": [
+                            {
+                              "type": "ThrowStatement",
+                              "expression": {
+                                "type": "NewExpression",
+                                "expression": {
+                                  "type": "Identifier",
+                                  "text": "Error"
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "TemplateExpression",
+                                    "head": "Failed to send message: ",
+                                    "templateSpans": [
+                                      {
+                                        "type": "TemplateSpan",
+                                        "expression": {
+                                          "type": "PropertyAccessExpression",
+                                          "expression": {
+                                            "type": "Identifier",
+                                            "text": "error"
+                                          },
+                                          "name": "message"
+                                        },
+                                        "literal": ""
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "src/server.ts": {
+      "path": "src/server.ts",
+      "type": "typescript",
+      "ast": {
+        "type": "SourceFile",
+        "statements": [
+          {
+            "type": "ClassDeclaration",
+            "name": "GeometricServer",
+            "kind": "class",
+            "modifiers": ["export"],
+            "members": [
+              {
+                "type": "PropertyDeclaration",
+                "name": "messageRepository",
+                "type": "IMessageRepository",
+                "modifiers": ["private", "readonly"]
+              },
+              {
+                "type": "PropertyDeclaration",
+                "name": "groupRepository",
+                "type": "IGroupRepository", 
+                "modifiers": ["private", "readonly"]
+              },
+              {
+                "type": "PropertyDeclaration",
+                "name": "nodeRepository",
+                "type": "INodeRepository",
+                "modifiers": ["private", "readonly"]
+              },
+              {
+                "type": "Constructor",
+                "name": "constructor",
+                "parameters": [
+                  {
+                    "name": "messageRepository",
+                    "type": "IMessageRepository",
+                    "optional": false
+                  },
+                  {
+                    "name": "groupRepository",
+                    "type": "IGroupRepository",
+                    "optional": false
+                  },
+                  {
+                    "name": "nodeRepository",
+                    "type": "INodeRepository",
+                    "optional": false
+                  }
+                ],
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "left": {
+                          "type": "PropertyAccessExpression",
+                          "expression": {
+                            "type": "ThisExpression"
+                          },
+                          "name": "messageRepository"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "type": "Identifier",
+                          "text": "messageRepository"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "MethodDeclaration",
+                "name": "start",
+                "kind": "method",
+                "modifiers": ["async", "public"],
+                "parameters": [
+                  {
+                    "name": "port",
+                    "type": "number",
+                    "optional": true
+                  }
+                ],
+                "returnType": "Promise<void>",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "VariableDeclaration",
+                      "declarationList": {
+                        "type": "VariableDeclarationList",
+                        "declarations": [
+                          {
+                            "type": "VariableDeclaration",
+                            "name": {
+                              "type": "Identifier",
+                              "text": "app"
+                            },
+                            "initializer": {
+                              "type": "CallExpression",
+                              "expression": {
+                                "type": "Identifier",
+                                "text": "express"
+                              },
+                              "arguments": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "src/services/verification-service.ts": {
+      "path": "src/services/verification-service.ts",
+      "type": "typescript",
+      "ast": {
+        "type": "SourceFile",
+        "statements": [
+          {
+            "type": "ClassDeclaration",
+            "name": "VerificationService",
+            "kind": "class",
+            "modifiers": ["export"],
+            "members": [
+              {
+                "type": "MethodDeclaration",
+                "name": "validateGeometricMessage",
+                "kind": "method",
+                "modifiers": ["public"],
+                "parameters": [
+                  {
+                    "name": "message",
+                    "type": "GeometricMessage",
+                    "optional": false
+                  }
+                ],
+                "returnType": "boolean",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "ReturnStatement",
+                      "expression": {
+                        "type": "BinaryExpression",
+                        "left": {
+                          "type": "BinaryExpression",
+                          "left": {
+                            "type": "BinaryExpression",
+                            "left": {
+                              "type": "CallExpression",
+                              "expression": {
+                                "type": "PropertyAccessExpression",
+                                "expression": {
+                                  "type": "Identifier",
+                                  "text": "message"
+                                },
+                                "name": "id"
+                              },
+                              "arguments": []
+                            },
+                            "operator": "&&",
+                            "right": {
+                              "type": "CallExpression",
+                              "expression": {
+                                "type": "PropertyAccessExpression",
+                                "expression": {
+                                  "type": "Identifier",
+                                  "text": "message"
+                                },
+                                "name": "from"
+                              },
+                              "arguments": []
+                            }
+                          },
+                          "operator": "&&",
+                          "right": {
+                            "type": "CallExpression",
+                            "expression": {
+                              "type": "PropertyAccessExpression",
+                              "expression": {
+                                "type": "Identifier",
+                                "text": "message"
+                              },
+                              "name": "to"
+                            },
+                            "arguments": []
+                          }
+                        },
+                        "operator": "&&",
+                        "right": {
+                          "type": "CallExpression",
+                          "expression": {
+                            "type": "PropertyAccessExpression",
+                            "expression": {
+                              "type": "Identifier",
+                              "text": "message"
+                            },
+                            "name": "content"
+                          },
+                          "arguments": []
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "MethodDeclaration",
+                "name": "validateGeometricData",
+                "kind": "method",
+                "modifiers": ["public"],
+                "parameters": [
+                  {
+                    "name": "data",
+                    "type": "GeometricData",
+                    "optional": false
+                  }
+                ],
+                "returnType": "boolean",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "TryStatement",
+                      "tryBlock": {
+                        "type": "Block",
+                        "statements": [
+                          {
+                            "type": "ReturnStatement",
+                            "expression": {
+                              "type": "BinaryExpression",
+                              "left": {
+                                "type": "CallExpression",
+                                "expression": {
+                                  "type": "PropertyAccessExpression",
+                                  "expression": {
+                                    "type": "Identifier",
+                                    "text": "data"
+                                  },
+                                  "name": "basis"
+                                },
+                                "arguments": []
+                              },
+                              "operator": "&&",
+                              "right": {
+                                "type": "CallExpression",
+                                "expression": {
+                                  "type": "PropertyAccessExpression",
+                                  "expression": {
+                                    "type": "Identifier",
+                                    "text": "data"
+                                  },
+                                  "name": "eigenvectors"
+                                },
+                                "arguments": []
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "catchClause": {
+                        "type": "CatchClause",
+                        "variableDeclaration": {
+                          "type": "VariableDeclaration",
+                          "name": {
+                            "type": "Identifier",
+                            "text": "error"
+                          }
+                        },
+                        "block": {
+                          "type": "Block",
+                          "statements": [
+                            {
+                              "type": "ReturnStatement",
+                              "expression": {
+                                "type": "FalseKeyword"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "src/geometric-protocol/federated-agents/simplicial-structures.ts": {
+      "path": "src/geometric-protocol/federated-agents/simplicial-structures.ts",
+      "type": "typescript",
+      "ast": {
+        "type": "SourceFile",
+        "statements": [
+          {
+            "type": "ClassDeclaration",
+            "name": "SimplicialDecisionComplexImpl",
+            "kind": "class",
+            "modifiers": ["export"],
+            "implements": ["ISimplicialDecisionComplex"],
+            "members": [
+              {
+                "type": "PropertyDeclaration",
+                "name": "simplices",
+                "type": "Map<string, Simplex>",
+                "modifiers": ["private"]
+              },
+              {
+                "type": "PropertyDeclaration",
+                "name": "decisions",
+                "type": "Map<string, Decision>",
+                "modifiers": ["private"]
+              },
+              {
+                "type": "Constructor",
+                "name": "constructor",
+                "parameters": [],
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "left": {
+                          "type": "PropertyAccessExpression",
+                          "expression": {
+                            "type": "ThisExpression"
+                          },
+                          "name": "simplices"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "type": "NewExpression",
+                          "expression": {
+                            "type": "Identifier",
+                            "text": "Map"
+                          },
+                          "arguments": []
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "MethodDeclaration",
+                "name": "addDecision",
+                "kind": "method",
+                "modifiers": ["public"],
+                "parameters": [
+                  {
+                    "name": "agents",
+                    "type": "Agent[]",
+                    "optional": false
+                  },
+                  {
+                    "name": "decision",
+                    "type": "Decision",
+                    "optional": false
+                  }
+                ],
+                "returnType": "void",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "VariableDeclaration",
+                      "declarationList": {
+                        "type": "VariableDeclarationList",
+                        "declarations": [
+                          {
+                            "type": "VariableDeclaration",
+                            "name": {
+                              "type": "Identifier",
+                              "text": "newSimplex"
+                            },
+                            "type": "Simplex",
+                            "initializer": {
+                              "type": "ObjectLiteralExpression",
+                              "properties": [
+                                {
+                                  "type": "PropertyAssignment",
+                                  "name": {
+                                    "type": "Identifier",
+                                    "text": "dimension"
+                                  },
+                                  "initializer": {
+                                    "type": "BinaryExpression",
+                                    "left": {
+                                      "type": "PropertyAccessExpression",
+                                      "expression": {
+                                        "type": "Identifier",
+                                        "text": "agents"
+                                      },
+                                      "name": "length"
+                                    },
+                                    "operator": "-",
+                                    "right": {
+                                      "type": "NumericLiteral",
+                                      "text": "1"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "MethodDeclaration",
+                "name": "boundaryExists",
+                "kind": "method",
+                "modifiers": ["private"],
+                "parameters": [
+                  {
+                    "name": "simplex",
+                    "type": "Simplex",
+                    "optional": false
+                  }
+                ],
+                "returnType": "boolean",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "VariableDeclaration",
+                      "declarationList": {
+                        "type": "VariableDeclarationList",
+                        "declarations": [
+                          {
+                            "type": "VariableDeclaration",
+                            "name": {
+                              "type": "Identifier",
+                              "text": "boundary"
+                            },
+                            "initializer": {
+                              "type": "CallExpression",
+                              "expression": {
+                                "type": "PropertyAccessExpression",
+                                "expression": {
+                                  "type": "ThisExpression"
+                                },
+                                "name": "computeBoundary"
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Identifier",
+                                  "text": "simplex"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "ReturnStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "expression": {
+                          "type": "PropertyAccessExpression",
+                          "expression": {
+                            "type": "Identifier",
+                            "text": "boundary"
+                          },
+                          "name": "every"
+                        },
+                        "arguments": [
+                          {
+                            "type": "ArrowFunction",
+                            "parameters": [
+                              {
+                                "type": "Identifier",
+                                "text": "face"
+                              }
+                            ],
+                            "body": {
+                              "type": "CallExpression",
+                              "expression": {
+                                "type": "PropertyAccessExpression",
+                                "expression": {
+                                  "type": "PropertyAccessExpression",
+                                  "expression": {
+                                    "type": "ThisExpression"
+                                  },
+                                  "name": "simplices"
+                                },
+                                "name": "has"
+                              },
+                              "arguments": [
+                                {
+                                  "type": "PropertyAccessExpression",
+                                  "expression": {
+                                    "type": "Identifier",
+                                    "text": "face"
+                                  },
+                                  "name": "id"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "src/geometric-protocol/federated-agents/epistemic-foundation.ts": {
+      "path": "src/geometric-protocol/federated-agents/epistemic-foundation.ts",
+      "type": "typescript",
+      "ast": {
+        "type": "SourceFile",
+        "statements": [
+          {
+            "type": "InterfaceDeclaration",
+            "name": "Fact",
+            "kind": "interface",
+            "modifiers": ["export"],
+            "members": [
+              {
+                "type": "PropertySignature",
+                "name": "id",
+                "type": "string",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "content",
+                "type": "string",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "confidence",
+                "type": "number",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "evidence",
+                "type": "string[]",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "timestamp",
+                "type": "Date",
+                "optional": false
+              },
+              {
+                "type": "PropertySignature",
+                "name": "source",
+                "type": "string",
+                "optional": false
+              }
+            ]
+          },
+          {
+            "type": "ClassDeclaration",
+            "name": "EpistemicComponentImpl",
+            "kind": "class",
+            "modifiers": ["export"],
+            "implements": ["IEpistemicComponent"],
+            "members": [
+              {
+                "type": "PropertyDeclaration",
+                "name": "state",
+                "type": "EpistemicState",
+                "modifiers": ["private"]
+              },
+              {
+                "type": "PropertyDeclaration",
+                "name": "transitionLog",
+                "type": "EpistemicTransition[]",
+                "modifiers": ["private"]
+              },
+              {
+                "type": "Constructor",
+                "name": "constructor",
+                "parameters": [],
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "left": {
+                          "type": "PropertyAccessExpression",
+                          "expression": {
+                            "type": "ThisExpression"
+                          },
+                          "name": "state"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "type": "ObjectLiteralExpression",
+                          "properties": [
+                            {
+                              "type": "PropertyAssignment",
+                              "name": {
+                                "type": "Identifier",
+                                "text": "knownKnowns"
+                              },
+                              "initializer": {
+                                "type": "NewExpression",
+                                "expression": {
+                                  "type": "Identifier",
+                                  "text": "Set"
+                                },
+                                "arguments": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "MethodDeclaration",
+                "name": "recordTransition",
+                "kind": "method",
+                "modifiers": ["public"],
+                "parameters": [
+                  {
+                    "name": "from",
+                    "type": "string",
+                    "optional": false
+                  },
+                  {
+                    "name": "to",
+                    "type": "string",
+                    "optional": false
+                  },
+                  {
+                    "name": "evidence",
+                    "type": "string",
+                    "optional": false
+                  }
+                ],
+                "returnType": "void",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "expression": {
+                          "type": "PropertyAccessExpression",
+                          "expression": {
+                            "type": "PropertyAccessExpression",
+                            "expression": {
+                              "type": "ThisExpression"
+                            },
+                            "name": "transitionLog"
+                          },
+                          "name": "push"
+                        },
+                        "arguments": [
+                          {
+                            "type": "ObjectLiteralExpression",
+                            "properties": [
+                              {
+                                "type": "PropertyAssignment",
+                                "name": {
+                                  "type": "Identifier",
+                                  "text": "timestamp"
+                                },
+                                "initializer": {
+                                  "type": "CallExpression",
+                                  "expression": {
+                                    "type": "Identifier",
+                                    "text": "Date"
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "CallExpression",
+                                      "expression": {
+                                        "type": "Identifier",
+                                        "text": "now"
+                                      },
+                                      "arguments": []
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "MethodDeclaration",
+                "name": "assessBeforeDeciding",
+                "kind": "method",
+                "modifiers": ["public"],
+                "parameters": [],
+                "returnType": "EpistemicAssessment",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "VariableDeclaration",
+                      "declarationList": {
+                        "type": "VariableDeclarationList",
+                        "declarations": [
+                          {
+                            "type": "VariableDeclaration",
+                            "name": {
+                              "type": "Identifier",
+                              "text": "kk_confidence"
+                            },
+                            "initializer": {
+                              "type": "CallExpression",
+                              "expression": {
+                                "type": "PropertyAccessExpression",
+                                "expression": {
+                                  "type": "ThisExpression"
+                                },
+                                "name": "assessConfidence"
+                              },
+                              "arguments": [
+                                {
+                                  "type": "CallExpression",
+                                  "expression": {
+                                    "type": "PropertyAccessExpression",
+                                    "expression": {
+                                      "type": "CallExpression",
+                                      "expression": {
+                                        "type": "PropertyAccessExpression",
+                                        "expression": {
+                                          "type": "PropertyAccessExpression",
+                                          "expression": {
+                                            "type": "ThisExpression"
+                                          },
+                                          "name": "state"
+                                        },
+                                        "name": "knownKnowns"
+                                      },
+                                      "arguments": []
+                                    },
+                                    "name": "Array"
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "CallExpression",
+                                      "expression": {
+                                        "type": "PropertyAccessExpression",
+                                        "expression": {
+                                          "type": "PropertyAccessExpression",
+                                          "expression": {
+                                            "type": "ThisExpression"
+                                          },
+                                          "name": "state"
+                                        },
+                                        "name": "knownKnowns"
+                                      },
+                                      "arguments": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "src/geometric-protocol/z-combinator/core-z-combinator.ts": {
+      "path": "src/geometric-protocol/z-combinator/core-z-combinator.ts",
+      "type": "typescript",
+      "ast": {
+        "type": "SourceFile",
+        "statements": [
+          {
+            "type": "ClassDeclaration",
+            "name": "AxiomaticZCombinator",
+            "kind": "class",
+            "modifiers": ["export"],
+            "typeParameters": [
+              {
+                "name": "T",
+                "constraint": undefined
+              }
+            ],
+            "implements": ["ZCombinatorBase<T>"],
+            "members": [
+              {
+                "type": "PropertyDeclaration",
+                "name": "config",
+                "type": "ZCombinatorConfig",
+                "modifiers": ["protected", "readonly"]
+              },
+              {
+                "type": "PropertyDeclaration",
+                "name": "fix",
+                "type": "<R>(f: (rec: (x: T) => R) => (x: T) => R) => (x: T) => R",
+                "modifiers": ["private", "readonly"]
+              },
+              {
+                "type": "Constructor",
+                "name": "constructor",
+                "parameters": [
+                  {
+                    "name": "config",
+                    "type": "Partial<ZCombinatorConfig>",
+                    "optional": true
+                  }
+                ],
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "left": {
+                          "type": "PropertyAccessExpression",
+                          "expression": {
+                            "type": "ThisExpression"
+                          },
+                          "name": "config"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "type": "ObjectLiteralExpression",
+                          "properties": [
+                            {
+                              "type": "SpreadAssignment",
+                              "expression": {
+                                "type": "Identifier",
+                                "text": "DEFAULT_Z_COMBINATOR_CONFIG"
+                              }
+                            },
+                            {
+                              "type": "SpreadAssignment",
+                              "expression": {
+                                "type": "Identifier",
+                                "text": "config"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "MethodDeclaration",
+                "name": "apply",
+                "kind": "method",
+                "modifiers": ["async", "public"],
+                "typeParameters": [
+                  {
+                    "name": "R",
+                    "constraint": undefined
+                  }
+                ],
+                "parameters": [
+                  {
+                    "name": "f",
+                    "type": "(rec: (x: T) => R) => (x: T) => R",
+                    "optional": false
+                  },
+                  {
+                    "name": "input",
+                    "type": "T",
+                    "optional": false
+                  }
+                ],
+                "returnType": "Promise<ZCombinatorResult<R>>",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "VariableDeclaration",
+                      "declarationList": {
+                        "type": "VariableDeclarationList",
+                        "declarations": [
+                          {
+                            "type": "VariableDeclaration",
+                            "name": {
+                              "type": "Identifier",
+                              "text": "startTime"
+                            },
+                            "initializer": {
+                              "type": "CallExpression",
+                              "expression": {
+                                "type": "Identifier",
+                                "text": "Date"
+                              },
+                              "arguments": [
+                                {
+                                  "type": "CallExpression",
+                                  "expression": {
+                                    "type": "Identifier",
+                                    "text": "now"
+                                  },
+                                  "arguments": []
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "src/agents/collaborative-analysis-system.ts": {
+      "path": "src/agents/collaborative-analysis-system.ts",
+      "type": "typescript",
+      "ast": {
+        "type": "SourceFile",
+        "statements": [
+          {
+            "type": "ClassDeclaration",
+            "name": "CollaborativeAnalysisSystem",
+            "kind": "class",
+            "modifiers": ["export"],
+            "extends": "EventEmitter",
+            "members": [
+              {
+                "type": "PropertyDeclaration",
+                "name": "agents",
+                "type": "Map<string, Agent>",
+                "modifiers": ["private"],
+                "initializer": {
+                  "type": "NewExpression",
+                  "expression": {
+                    "type": "Identifier",
+                    "text": "Map"
+                  },
+                  "arguments": []
+                }
+              },
+              {
+                "type": "PropertyDeclaration",
+                "name": "tasks",
+                "type": "Map<string, AnalysisTask>",
+                "modifiers": ["private"],
+                "initializer": {
+                  "type": "NewExpression",
+                  "expression": {
+                    "type": "Identifier",
+                    "text": "Map"
+                  },
+                  "arguments": []
+                }
+              },
+              {
+                "type": "Constructor",
+                "name": "constructor",
+                "parameters": [],
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "expression": {
+                          "type": "Super"
+                        },
+                        "arguments": []
+                      }
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "expression": {
+                          "type": "PropertyAccessExpression",
+                          "expression": {
+                            "type": "ThisExpression"
+                          },
+                          "name": "initializeDefaultAgents"
+                        },
+                        "arguments": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "MethodDeclaration",
+                "name": "registerAgent",
+                "kind": "method",
+                "modifiers": ["public"],
+                "parameters": [
+                  {
+                    "name": "agent",
+                    "type": "Agent",
+                    "optional": false
+                  }
+                ],
+                "returnType": "void",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "expression": {
+                          "type": "PropertyAccessExpression",
+                          "expression": {
+                            "type": "PropertyAccessExpression",
+                            "expression": {
+                              "type": "ThisExpression"
+                            },
+                            "name": "agents"
+                          },
+                          "name": "set"
+                        },
+                        "arguments": [
+                          {
+                            "type": "PropertyAccessExpression",
+                            "expression": {
+                              "type": "Identifier",
+                              "text": "agent"
+                            },
+                            "name": "id"
+                          },
+                          {
+                            "type": "Identifier",
+                            "text": "agent"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "MethodDeclaration",
+                "name": "createTask",
+                "kind": "method",
+                "modifiers": ["public"],
+                "parameters": [
+                  {
+                    "name": "task",
+                    "type": "Omit<AnalysisTask, 'id' | 'status' | 'findings' | 'recommendations'>",
+                    "optional": false
+                  }
+                ],
+                "returnType": "string",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "VariableDeclaration",
+                      "declarationList": {
+                        "type": "VariableDeclarationList",
+                        "declarations": [
+                          {
+                            "type": "VariableDeclaration",
+                            "name": {
+                              "type": "Identifier",
+                              "text": "taskId"
+                            },
+                            "initializer": {
+                              "type": "TemplateExpression",
+                              "head": "task_",
+                              "templateSpans": [
+                                {
+                                  "type": "TemplateSpan",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "expression": {
+                                      "type": "Identifier",
+                                      "text": "Date"
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "CallExpression",
+                                        "expression": {
+                                          "type": "Identifier",
+                                          "text": "now"
+                                        },
+                                        "arguments": []
+                                      }
+                                    ]
+                                  },
+                                  "literal": "_"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "src/services/context-aware-calculator.ts": {
+      "path": "src/services/context-aware-calculator.ts",
+      "type": "typescript",
+      "ast": {
+        "type": "SourceFile",
+        "statements": [
+          {
+            "type": "ClassDeclaration",
+            "name": "ContextAwareCalculator",
+            "kind": "class",
+            "modifiers": ["export"],
+            "members": [
+              {
+                "type": "PropertyDeclaration",
+                "name": "context",
+                "type": "CalculationContext",
+                "modifiers": ["private"]
+              },
+              {
+                "type": "PropertyDeclaration",
+                "name": "metricsCache",
+                "type": "Map<string, any>",
+                "modifiers": ["private"],
+                "initializer": {
+                  "type": "NewExpression",
+                  "expression": {
+                    "type": "Identifier",
+                    "text": "Map"
+                  },
+                  "arguments": []
+                }
+              },
+              {
+                "type": "Constructor",
+                "name": "constructor",
+                "parameters": [
+                  {
+                    "name": "context",
+                    "type": "CalculationContext",
+                    "optional": false
+                  }
+                ],
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "left": {
+                          "type": "PropertyAccessExpression",
+                          "expression": {
+                            "type": "ThisExpression"
+                          },
+                          "name": "context"
+                        },
+                        "operator": "=",
+                        "right": {
+                          "type": "Identifier",
+                          "text": "context"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "MethodDeclaration",
+                "name": "calculatePerformance",
+                "kind": "method",
+                "modifiers": ["async", "public"],
+                "parameters": [
+                  {
+                    "name": "context",
+                    "type": "CalculationContext",
+                    "optional": false
+                  },
+                  {
+                    "name": "systemMetrics",
+                    "type": "Partial<PerformanceMetrics>",
+                    "optional": true
+                  }
+                ],
+                "returnType": "Promise<CalculationResult<number>>",
+                "body": {
+                  "type": "Block",
+                  "statements": [
+                    {
+                      "type": "VariableDeclaration",
+                      "declarationList": {
+                        "type": "VariableDeclarationList",
+                        "declarations": [
+                          {
+                            "type": "VariableDeclaration",
+                            "name": {
+                              "type": "Identifier",
+                              "text": "startTime"
+                            },
+                            "initializer": {
+                              "type": "CallExpression",
+                              "expression": {
+                                "type": "Identifier",
+                                "text": "Date"
+                              },
+                              "arguments": [
+                                {
+                                  "type": "CallExpression",
+                                  "expression": {
+                                    "type": "Identifier",
+                                    "text": "now"
+                                  },
+                                  "arguments": []
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "totalFiles": 146,
+    "totalFunctions": 0,
+    "totalClasses": 0,
+    "totalInterfaces": 0,
+    "totalEnums": 0,
+    "totalMethods": 0,
+    "totalProperties": 0,
+    "totalConstructors": 0,
+    "totalTypeAliases": 0,
+    "totalNamespaces": 0,
+    "totalModules": 0
+  },
+  "summary": {
+    "description": "This wiki.json file contains the Abstract Syntax Tree (AST) representation of all TypeScript functions, classes, interfaces, and other declarations in the Axiomatic codebase. Each file is represented as a SourceFile AST node with its statements containing the hierarchical structure of all code elements.",
+    "structure": "Each file contains an 'ast' property with a SourceFile node containing statements array. Each statement represents a top-level declaration (class, interface, function, etc.) with their nested members (methods, properties, constructors) represented as child AST nodes.",
+    "usage": "This AST structure can be used for code analysis, refactoring, documentation generation, and understanding the codebase structure programmatically."
+  }
+}

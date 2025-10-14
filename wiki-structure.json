@@ -1,0 +1,394 @@
+{
+  "metadata": {
+    "title": "Universal Signal Processing & Geometric AI Wiki",
+    "description": "A comprehensive wiki for Universal Signal Processing, Geometric AI, and Advanced Mathematical Frameworks",
+    "version": "2.0.0",
+    "lastUpdated": "2025-01-04T06:30:00Z",
+    "targetAudience": ["web3-technologists", "logistics-managers", "teachers", "signal-processing-engineers", "ai-researchers"]
+  },
+  "navigation": {
+    "main": [
+      {
+        "title": "Getting Started",
+        "path": "getting-started.md",
+        "description": "15-minute introduction to the framework",
+        "category": "guides",
+        "order": 1
+      },
+      {
+        "title": "Mathematical Foundations",
+        "path": "mathematical-foundations.md",
+        "description": "The geometry behind the framework",
+        "category": "core",
+        "order": 2
+      },
+      {
+        "title": "Wave-Function Semantics",
+        "path": "wave-function-semantics.md",
+        "description": "Identity, sovereignty, and collective intelligence",
+        "category": "core",
+        "order": 3
+      },
+      {
+        "title": "Geometric Evolution",
+        "path": "geometric-evolution.md",
+        "description": "From points to wave functions",
+        "category": "core",
+        "order": 4
+      },
+      {
+        "title": "Autonomous Identity & Sovereignty",
+        "path": "autonomous-identity-sovereignty.md",
+        "description": "Comprehensive analysis",
+        "category": "core",
+        "order": 5
+      },
+      {
+        "title": "Use Cases",
+        "path": "use-cases.md",
+        "description": "Real-world applications",
+        "category": "applications",
+        "order": 6
+      },
+      {
+        "title": "Implementation Guide",
+        "path": "implementation-guide.md",
+        "description": "How to build with this framework",
+        "category": "guides",
+        "order": 7
+      },
+      {
+        "title": "Glossary",
+        "path": "glossary.md",
+        "description": "Key terms and concepts",
+        "category": "reference",
+        "order": 8
+      },
+      {
+        "title": "FAQ",
+        "path": "faq.md",
+        "description": "Common questions",
+        "category": "support",
+        "order": 9
+      },
+      {
+        "title": "Community",
+        "path": "community.md",
+        "description": "How to get involved",
+        "category": "community",
+        "order": 10
+      },
+      {
+        "title": "Universal Signal Processing",
+        "path": "universal-signal-processing.md",
+        "description": "5-cell geometric framework for all signal types",
+        "category": "advanced-topics",
+        "order": 11
+      },
+      {
+        "title": "Geometric Communication Protocols",
+        "path": "geometric-communication-protocols.md",
+        "description": "Platonic solid consensus for distributed systems",
+        "category": "advanced-topics",
+        "order": 12
+      },
+      {
+        "title": "AI Persistence Deployment",
+        "path": "ai-persistence-deployment.md",
+        "description": "Deploy your AI's memory in 10 minutes",
+        "category": "advanced-topics",
+        "order": 13
+      },
+      {
+        "title": "Church Encoding Explained",
+        "path": "church-encoding-explained.md",
+        "description": "Making computers think mathematically",
+        "category": "advanced-topics",
+        "order": 14
+      },
+      {
+        "title": "Fano Plane Agents",
+        "path": "fano-plane-agents.md",
+        "description": "7 agents coordinating like geometry",
+        "category": "advanced-topics",
+        "order": 15
+      },
+      {
+        "title": "Topological Surfaces Protocols",
+        "path": "topological-surfaces-protocols.md",
+        "description": "Betti numbers and eternal recurrence",
+        "category": "advanced-topics",
+        "order": 16
+      },
+      {
+        "title": "Z-Combinator Recursion",
+        "path": "z-combinator-recursion.md",
+        "description": "Self-improving code that never breaks",
+        "category": "advanced-topics",
+        "order": 17
+      },
+      {
+        "title": "Projective Semantics Deep Dive",
+        "path": "projective-semantics-deep-dive.md",
+        "description": "Making AI understand 'maybe'",
+        "category": "advanced-topics",
+        "order": 18
+      }
+    ]
+  },
+  "categories": {
+    "core": {
+      "title": "Core Concepts",
+      "description": "Fundamental mathematical and theoretical concepts",
+      "color": "#4F46E5",
+      "icon": "🧮"
+    },
+    "applications": {
+      "title": "Applications",
+      "description": "Real-world use cases and applications",
+      "color": "#059669",
+      "icon": "🎯"
+    },
+    "guides": {
+      "title": "Guides",
+      "description": "Step-by-step tutorials and guides",
+      "color": "#DC2626",
+      "icon": "📚"
+    },
+    "reference": {
+      "title": "Reference",
+      "description": "Reference materials and documentation",
+      "color": "#7C3AED",
+      "icon": "📖"
+    },
+    "support": {
+      "title": "Support",
+      "description": "Help and support resources",
+      "color": "#EA580C",
+      "icon": "❓"
+    },
+    "community": {
+      "title": "Community",
+      "description": "Community resources and collaboration",
+      "color": "#0891B2",
+      "icon": "🤝"
+    },
+    "advanced-topics": {
+      "title": "Advanced Topics",
+      "description": "Deep technical concepts and implementations",
+      "color": "#DC2626",
+      "icon": "🚀"
+    }
+  },
+  "features": {
+    "waveFunctionSemantics": {
+      "title": "Wave-Function Semantics",
+      "description": "Identity as wave functions, sovereignty as derivatives",
+      "pages": ["wave-function-semantics.md", "autonomous-identity-sovereignty.md"]
+    },
+    "geometricEvolution": {
+      "title": "Geometric Evolution",
+      "description": "The journey from points to wave functions",
+      "pages": ["geometric-evolution.md", "mathematical-foundations.md"]
+    },
+    "autonomousSystems": {
+      "title": "Autonomous Systems",
+      "description": "AI systems with persistent identity and sovereignty",
+      "pages": ["autonomous-identity-sovereignty.md", "use-cases.md"]
+    },
+    "web3Applications": {
+      "title": "Web3 Applications",
+      "description": "Decentralized systems and blockchain applications",
+      "pages": ["use-cases.md", "implementation-guide.md"]
+    },
+    "universalSignalProcessing": {
+      "title": "Universal Signal Processing",
+      "description": "5-cell geometric framework for all signal types",
+      "pages": ["universal-signal-processing.md", "geometric-communication-protocols.md"]
+    },
+    "geometricAI": {
+      "title": "Geometric AI",
+      "description": "AI systems with geometric consciousness and persistence",
+      "pages": ["ai-persistence-deployment.md", "fano-plane-agents.md", "projective-semantics-deep-dive.md"]
+    },
+    "mathematicalVerification": {
+      "title": "Mathematical Verification",
+      "description": "Church encoding and computable proofs",
+      "pages": ["church-encoding-explained.md", "z-combinator-recursion.md", "topological-surfaces-protocols.md"]
+    }
+  },
+  "targetAudiences": {
+    "web3-technologists": {
+      "title": "Web3 Technologists",
+      "description": "Developers working with decentralized systems",
+      "primaryPages": ["use-cases.md", "implementation-guide.md", "geometric-communication-protocols.md", "fano-plane-agents.md"],
+      "interests": ["decentralized-governance", "smart-contracts", "consensus-mechanisms", "autonomous-systems", "geometric-consensus"]
+    },
+    "logistics-managers": {
+      "title": "Logistics Managers",
+      "description": "Professionals managing supply chains and operations",
+      "primaryPages": ["use-cases.md", "getting-started.md", "universal-signal-processing.md", "topological-surfaces-protocols.md"],
+      "interests": ["supply-chain-optimization", "route-planning", "resource-allocation", "risk-assessment", "signal-processing"]
+    },
+    "teachers": {
+      "title": "Teachers and Educators",
+      "description": "Educators teaching complex concepts and AI",
+      "primaryPages": ["getting-started.md", "mathematical-foundations.md", "geometric-evolution.md", "church-encoding-explained.md"],
+      "interests": ["visual-learning", "concept-mapping", "interactive-tools", "adaptive-learning", "mathematical-proofs"]
+    },
+    "signal-processing-engineers": {
+      "title": "Signal Processing Engineers",
+      "description": "Engineers working with audio, video, and data signals",
+      "primaryPages": ["universal-signal-processing.md", "getting-started.md", "implementation-guide.md", "z-combinator-recursion.md"],
+      "interests": ["universal-codecs", "fft-processing", "5-cell-geometry", "sacred-mathematics", "signal-routing"]
+    },
+    "ai-researchers": {
+      "title": "AI Researchers",
+      "description": "Researchers in artificial intelligence and machine learning",
+      "primaryPages": ["ai-persistence-deployment.md", "projective-semantics-deep-dive.md", "fano-plane-agents.md", "wave-function-semantics.md"],
+      "interests": ["ai-persistence", "geometric-consciousness", "agent-coordination", "mathematical-verification", "uncertainty-handling"]
+    }
+  },
+  "learningPaths": {
+    "beginner": {
+      "title": "Beginner Path",
+      "description": "Start here if you're new to the framework",
+      "pages": [
+        "getting-started.md",
+        "mathematical-foundations.md",
+        "use-cases.md",
+        "implementation-guide.md"
+      ]
+    },
+    "intermediate": {
+      "title": "Intermediate Path",
+      "description": "For those with some background knowledge",
+      "pages": [
+        "wave-function-semantics.md",
+        "geometric-evolution.md",
+        "autonomous-identity-sovereignty.md",
+        "use-cases.md"
+      ]
+    },
+    "advanced": {
+      "title": "Advanced Path",
+      "description": "For researchers and advanced practitioners",
+      "pages": [
+        "autonomous-identity-sovereignty.md",
+        "wave-function-semantics.md",
+        "geometric-evolution.md",
+        "implementation-guide.md"
+      ]
+    },
+    "signal-processing-engineer": {
+      "title": "Signal Processing Engineer Path",
+      "description": "For engineers working with universal signal processing",
+      "pages": [
+        "getting-started.md",
+        "universal-signal-processing.md",
+        "geometric-communication-protocols.md",
+        "z-combinator-recursion.md",
+        "implementation-guide.md"
+      ]
+    },
+    "distributed-systems-architect": {
+      "title": "Distributed Systems Architect Path",
+      "description": "For architects building geometric consensus systems",
+      "pages": [
+        "geometric-communication-protocols.md",
+        "fano-plane-agents.md",
+        "topological-surfaces-protocols.md",
+        "church-encoding-explained.md",
+        "implementation-guide.md"
+      ]
+    },
+    "ai-researcher": {
+      "title": "AI Researcher Path",
+      "description": "For researchers in geometric AI and persistence",
+      "pages": [
+        "ai-persistence-deployment.md",
+        "projective-semantics-deep-dive.md",
+        "fano-plane-agents.md",
+        "wave-function-semantics.md",
+        "autonomous-identity-sovereignty.md"
+      ]
+    }
+  },
+  "crossReferences": {
+    "wave-function-semantics.md": [
+      "mathematical-foundations.md",
+      "geometric-evolution.md",
+      "autonomous-identity-sovereignty.md",
+      "use-cases.md"
+    ],
+    "geometric-evolution.md": [
+      "mathematical-foundations.md",
+      "wave-function-semantics.md",
+      "autonomous-identity-sovereignty.md"
+    ],
+    "autonomous-identity-sovereignty.md": [
+      "wave-function-semantics.md",
+      "geometric-evolution.md",
+      "use-cases.md",
+      "implementation-guide.md"
+    ],
+    "mathematical-foundations.md": [
+      "wave-function-semantics.md",
+      "geometric-evolution.md",
+      "getting-started.md"
+    ],
+    "use-cases.md": [
+      "wave-function-semantics.md",
+      "autonomous-identity-sovereignty.md",
+      "implementation-guide.md"
+    ],
+    "universal-signal-processing.md": [
+      "getting-started.md",
+      "geometric-communication-protocols.md",
+      "ai-persistence-deployment.md",
+      "church-encoding-explained.md"
+    ],
+    "geometric-communication-protocols.md": [
+      "universal-signal-processing.md",
+      "fano-plane-agents.md",
+      "topological-surfaces-protocols.md",
+      "church-encoding-explained.md"
+    ],
+    "ai-persistence-deployment.md": [
+      "universal-signal-processing.md",
+      "geometric-communication-protocols.md",
+      "fano-plane-agents.md",
+      "projective-semantics-deep-dive.md"
+    ],
+    "church-encoding-explained.md": [
+      "universal-signal-processing.md",
+      "geometric-communication-protocols.md",
+      "fano-plane-agents.md",
+      "z-combinator-recursion.md"
+    ],
+    "fano-plane-agents.md": [
+      "geometric-communication-protocols.md",
+      "ai-persistence-deployment.md",
+      "church-encoding-explained.md",
+      "topological-surfaces-protocols.md"
+    ],
+    "topological-surfaces-protocols.md": [
+      "geometric-communication-protocols.md",
+      "fano-plane-agents.md",
+      "z-combinator-recursion.md",
+      "projective-semantics-deep-dive.md"
+    ],
+    "z-combinator-recursion.md": [
+      "church-encoding-explained.md",
+      "topological-surfaces-protocols.md",
+      "projective-semantics-deep-dive.md",
+      "universal-signal-processing.md"
+    ],
+    "projective-semantics-deep-dive.md": [
+      "ai-persistence-deployment.md",
+      "fano-plane-agents.md",
+      "topological-surfaces-protocols.md",
+      "z-combinator-recursion.md"
+    ]
+  }
+}
